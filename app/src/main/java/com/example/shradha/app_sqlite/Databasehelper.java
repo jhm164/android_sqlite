@@ -54,24 +54,12 @@ db.execSQL("Drop table if Exists "+table_name);
         return true;
     }
 
-    public ArrayList<String>  viewd(){
-        ArrayList<String> a=new ArrayList<String>();
-        try {
-
-
+    public Cursor  viewd(){
             SQLiteDatabase db=this.getReadableDatabase();
             Cursor resultSet = db.rawQuery("Select * from " + table_name, null);
                 resultSet.moveToFirst();
 
-              //  a.add(resultSet.getString(0));
-                a.add(resultSet.getString(1));
-                a.add(resultSet.getString(2));
-                return a;
-
-        }catch (SQLException e){
-            a.add(e.toString());
-            return a;
-        }
+        return resultSet;
     }
 }
 

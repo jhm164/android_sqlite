@@ -1,0 +1,1 @@
+this project help you to begin with SQLite in  andrid studio
